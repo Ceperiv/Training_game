@@ -9,37 +9,43 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Quintessential&display=swap"
-        rel="stylesheet">
-
+          rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <div class="screen">
-        <h1>Training</h1>
-        <a href="#" class="start" id="start">Нова гра</a>
-    </div>
-    <div class="screen">
-        <h1>Оберіть час</h1>
-        <ul class="time-list" id="time-list">
-            <li> <button class="time-btn" data-time="10">10 секунд</button></li>
-            <li> <button class="time-btn" data-time="30">30 секунд</button></li>
-            <li> <button class="time-btn" data-time="60">1 хвилина</button></li>
-            <li> <button class="time-btn" data-time="180">3 хвилини</button></li>
-        </ul>
+<div class="screen">
+    <h1>Training</h1>
+    <a href="#" class="start" id="start">Нова гра</a>
+</div>
+<div class="screen">
+    <h1>Оберіть час</h1>
+    <ul class="time-list" id="time-list">
+        <li>
+            <button class="time-btn" data-time="10">10 секунд</button>
+        </li>
+        <li>
+            <button class="time-btn" data-time="30">30 секунд</button>
+        </li>
+        <li>
+            <button class="time-btn" data-time="60">1 хвилина</button>
+        </li>
+        <li>
+            <button class="time-btn" data-time="180">3 хвилини</button>
+        </li>
+    </ul>
 
+</div>
+<div class="screen">
+    <h3>Залишилось - <span id="time">00:00</span></h3>
+    <div class="board" id="board"></div>
+    <div class="start-game-again">
+        <a href="#" onclick="location.reload(); return false;">Розпочати знову</a>
     </div>
-    <div class="screen">
-        <h3>Залишилось - <span id="time">00:00</span></h3>
-        <div class="board" id="board"></div>
-        <div class="start-game-again">
-            <a href="#" onclick="location.reload(); return false;">Розпочати знову</a>
-        </div>
-    </div>
+</div>
 
-
-    <script src="https://kit.fontawesome.com/b6a2596c45.js" crossorigin="anonymous"></script>
-    <script src="./app.js"></script>
+<script src="https://kit.fontawesome.com/b6a2596c45.js" crossorigin="anonymous"></script>
+<script src="./app.js"></script>
 </body>
 
 </html>

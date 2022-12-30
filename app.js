@@ -1,31 +1,28 @@
-const startBtn = document.querySelector('#start')
-const screens = document.querySelectorAll('.screen')
-const timeList = document.querySelector('#time-list')
-const timeEl = document.querySelector('#time')
-const board = document.querySelector('#board')
+const startBtn = document.querySelector('#start');
+const screens = document.querySelectorAll('.screen');
+const timeList = document.querySelector('#time-list');
+const timeEl = document.querySelector('#time');
+const board = document.querySelector('#board');
 
-console.log(screens)
-
-let time = 0
-let score = 0
-let fullTime = 0
+let time = 0;
+let score = 0;
+let fullTime = 0;
 
 startBtn.addEventListener('click', (event) => {
-    event.preventDefault()
-    screens[0].classList.add('up')
-
-
-})
+    event.preventDefault();
+    screens[0].classList.add('up');
+});
 
 timeList.addEventListener('click', event => {
-    if (event.target.classList.contains('time-btn'))
-        console.log(event.target)
-    time = parseInt(event.target.getAttribute('data-time'))
-    fullTime = parseInt(event.target.getAttribute('data-time'))
-    console.log(fullTime)
-    screens[1].classList.add('up')
-    startGame()
-})
+
+    if (event.target.classList.contains('time-btn')) {
+        time = parseInt(event.target.getAttribute('data-time'))
+        fullTime = parseInt(event.target.getAttribute('data-time'))
+        screens[1].classList.add('up');
+    }
+        startGame()
+
+});
 
 board.addEventListener('click', event => {
     if (event.target.classList.contains('circle')) {
@@ -33,25 +30,21 @@ board.addEventListener('click', event => {
         event.target.remove()
         createRundomCircle()
     }
-})
-
-
+});
 
 function startGame() {
     setInterval(decreaseTime, 1000)
     createRundomCircle()
-
-
 }
 
 function decreaseTime() {
 
     if (time > 60) {
         let minute = --time
-        minute = `0${Math.floor(time / 60)}:${time - Math.floor(time/60)*60}`
+        minute = `0${Math.floor(time / 60)}:${time - Math.floor(time / 60) * 60}`
 
         if ((time - Math.floor(time / 60) * 60) < 10) {
-            minute = `0${Math.floor(time/60)}:0${time-Math.floor(time/60)*60}`
+            minute = `0${Math.floor(time / 60)}:0${time - Math.floor(time / 60) * 60}`
         }
         setTime(minute)
     } else {
@@ -71,7 +64,6 @@ function decreaseTime() {
 
 function setTime(value) {
     timeEl.innerHTML = `00:${value}`
-
 }
 
 function finishGame() {
@@ -81,7 +73,6 @@ function finishGame() {
         board.innerHTML = `<h1><span class="style-score">Рахунок ~ </span><span class="style-score-2"><span class="style-score_0">${score}</span> <br> <i class="fas fa-meh"></i><br><p>Ти можеш краще</p></span></h1>`
     } else {
         board.innerHTML = `<h1><span class="style-score">Рахунок ~ </span><span class="style-score-3"><span class="style-score_0">${score}</span> <br> <i class="far fa-smile-beam"></i><br><p>Так тримати!!!</p></span></h1>`
-        
     }
     timeEl.parentNode.classList.add('hide')
 }

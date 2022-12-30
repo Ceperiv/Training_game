@@ -53,7 +53,7 @@ h1{
 }
 .time-btn{
     background-color: transparent;
-    bottom: 2px solid black;
+    border: 2px solid black;
     color: bisque;
     cursor: pointer;
     font-family: inherit;
@@ -81,7 +81,6 @@ h1{
     width: 500px;
     height: 500px;
     background: linear-gradient(120deg, #29323c -4.6%, #485563 200.44%);
-    box-shadow: -8 -8 -20 #29323c, 10 7 20 #485563;
     border-radius: 30px;
     overflow: hidden;
 }
