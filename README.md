@@ -9,3 +9,4 @@ when the light off:)
 <h2>Freelance initial game development on vanilla JS</h2>
 
 <h4>You can try it here:</h4> <i>https://ceperiv-simpe-game-io.netlify.app<i>
+</>
